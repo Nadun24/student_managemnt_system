@@ -16,7 +16,9 @@
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" id="description" name="description" rows="3"></textarea>
         </div>
+        <input type="hidden" id="subjectId">
         <button type="button" class="btn btn-success" id="subjectAddBtn">Add Subject</button>
+        <button type="button" class="btn btn-primary d-none" id="subjectUpdateBtn">Update Subject</button>
     </form>
     <table class="table table-striped mt-5">
         <thead>

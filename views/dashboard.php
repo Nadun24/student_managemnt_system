@@ -22,6 +22,7 @@
             <label for="address" class="form-label">Address</label>
             <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
         </div>
+        <input type="hidden" id="userId">
         <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
         <button type="button" id="updateBtn" class="btn btn-success d-none">Update</button>
     </form>

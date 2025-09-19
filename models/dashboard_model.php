@@ -32,5 +32,13 @@ if (isset($_POST['action'])) {
         $query = "SELECT * FROM `user_table` WHERE `id` = {$_POST['id']};";
         $data = $app->json_encoded_select_query($query);
         echo ($data);
+    } else if ($_POST['action'] == 'updateUser') {
+        $query = "UPDATE `user_table` SET `name` = '{$_POST['name']}', `email` = '{$_POST['email']}', `contact_number` = '{$_POST['contact_number']}', `address` = '{$_POST['address']}' WHERE `id` = {$_POST['id']};";
+        $result = $app->insert_update_delete_query($query);
+        if ($result) {
+            echo 1;
+        } else {
+            echo 0;
+        }
     }
 }

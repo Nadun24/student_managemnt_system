@@ -1,6 +1,11 @@
 getUsers()
+
 $('#submitBtn').click(function () {
   add_user()
+})
+
+$('#updateBtn').click(function () {
+  updateUser()
 })
 
 //=======================================================
@@ -39,11 +44,12 @@ $(document).on('click', '.update-user', function () {
 
   $.post('models/dashboard_model.php', data, function (res) {
     let user = JSON.parse(res)
-    console.log(user)
+    // console.log(user)
     $('#name').val(user[0].name)
     $('#email').val(user[0].email)
     $('#contact').val(user[0].contact_number)
     $('#address').val(user[0].address)
+    $('#userId').val(user[0].id)
   })
 })
 
@@ -127,6 +133,43 @@ function getUsers () {
   })
 }
 
+function updateUser () {
+  var name = $('#name').val()
+  var email = $('#email').val()
+  var contact_number = $('#contact').val()
+  var address = $('#address').val()
+  let userId = $('#userId').val()
+
+  console.log('userId:', userId)
+
+  var data = {
+    action: 'updateUser',
+    id: userId,
+    name: name,
+    email: email,
+    contact_number: contact_number,
+    address: address
+  }
+
+  $.post('models/dashboard_model.php', data, function (response) {
+    if (response == '1') {
+      Swal.fire({
+        title: 'User updated successfully',
+        icon: 'success',
+        draggable: true
+      })
+      clear_form()
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error updating user',
+        footer: ''
+      })
+    }
+  })
+}
+
 function clear_form () {
   console.log('clear form called')
 
@@ -134,5 +177,8 @@ function clear_form () {
   $('#email').val('')
   $('#contact').val('')
   $('#address').val('')
+  $('#userId').val('')
+  $('#submitBtn').removeClass('d-none')
+  $('#updateBtn').addClass('d-none')
   getUsers()
 }
