@@ -20,8 +20,7 @@
                 <?php require_once './views/dashboard.php'; ?>
             </div>
             <div class="tab-pane fade" id="subjectTab">
-                <h3>Subject Tab</h3>
-                <p>Content for the Subject tab goes here.</p>
+                <?php require_once './views/subject.php'; ?>
             </div>
         </div>
     </div>

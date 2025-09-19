@@ -63,8 +63,8 @@ function add_user () {
     address: address
   }
   $.post('models/dashboard_model.php', data, function (response) {
-    if (response == '1') {
-      //   alert('User added successfully')
+    if (response == 1) {
+      // alert('User added successfully')
       Swal.fire({
         title: 'User added successfully',
         icon: 'success',
@@ -128,6 +128,8 @@ function getUsers () {
 }
 
 function clear_form () {
+  console.log('clear form called')
+
   $('#name').val('')
   $('#email').val('')
   $('#contact').val('')
