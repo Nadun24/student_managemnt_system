@@ -4,44 +4,52 @@
 
 
 <div class="container mt-5">
-    <h2>Basic Information Form</h2>
-    <form>
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="contact" class="form-label">Contact Number</label>
-            <input type="tel" class="form-control" id="contact" name="contact" required>
-        </div>
-        <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
-        </div>
-        <input type="hidden" id="userId">
-        <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
-        <button type="button" id="updateBtn" class="btn btn-success d-none">Update</button>
-    </form>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <?php require_once 'others/sidebar.php'; ?>
 
-    <table class="table table-striped mt-5">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Contact Number</th>
-                <th scope="col">Address</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody id="userTableBody">
-            <!-- User data will be populated here -->
-        </tbody>
-    </table>
+        <!-- Main Content -->
+        <div class="flex-grow-1 p-4">
+            <h2>Basic Information Form</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">Contact Number</label>
+                    <input type="tel" class="form-control" id="contact" name="contact" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                </div>
+                <input type="hidden" id="userId">
+                <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
+                <button type="button" id="updateBtn" class="btn btn-success d-none">Update</button>
+            </form>
+
+            <table class="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <!-- User data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- Bootstrap JS Bundle CDN -->

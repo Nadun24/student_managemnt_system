@@ -125,6 +125,7 @@ function getSubjects () {
   var data = {
     action: 'getSubjects'
   }
+
   $.post('models/subject_model.php', data, function (response) {
     let subjects = JSON.parse(response)
     let rows = ''
