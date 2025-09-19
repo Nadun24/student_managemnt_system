@@ -18,23 +18,23 @@
         </div>
         <button type="button" class="btn btn-success" id="subjectAddBtn">Add Subject</button>
     </form>
+    <table class="table table-striped mt-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Subject Name</th>
+                <th scope="col">Subject Code</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="subjectTableBody">
+            <!-- Subject data will be populated here -->
+
+        </tbody>
+    </table>
 </div>
 
-<table class="table table-striped mt-5">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Subject Name</th>
-            <th scope="col">Subject Code</th>
-            <th scope="col">Description</th>
-            <th scope="col">Actions</th>
-        </tr>
-    </thead>
-    <tbody id="subjectTableBody">
-        <!-- Subject data will be populated here -->
-
-    </tbody>
-</table>
 
 <!-- Bootstrap JS Bundle CDN -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

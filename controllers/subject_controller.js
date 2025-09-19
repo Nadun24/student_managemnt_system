@@ -1,3 +1,5 @@
+getSubjects()
+
 $('#subjectAddBtn').on('click', function () {
   subjectAdd()
 })
@@ -34,7 +36,33 @@ function subjectAdd () {
 }
 
 function getSubjects () {
-  var data = {}
+  var data = {
+    action: 'getSubjects'
+  }
+  $.post('models/subject_model.php', data, function (response) {
+    let subjects = JSON.parse(response)
+    let rows = ''
+
+    subjects.forEach((subject, index) => {
+      rows += `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${subject.subject_name}</td>
+              <td>${subject.subject_code}</td>
+              <td>${subject.description}</td>
+              <td>
+                <button class="btn btn-danger delete-subject" data-id="${
+                  subject.id
+                }">Delete</button>
+                <button class="btn btn-warning update-subject" data-id="${
+                  subject.id
+                }">Update</button>
+              </td>
+            </tr>
+          `
+    })
+    $('#subjectTableBody').html(rows)
+  })
 }
 
 function clearForm () {
