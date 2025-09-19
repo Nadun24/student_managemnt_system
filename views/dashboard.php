@@ -3,15 +3,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<div class="container mt-5">
+<div class="container-fluid m-3">
     <div class="d-flex">
         <!-- Sidebar -->
         <?php require_once 'others/sidebar.php'; ?>
 
         <!-- Main Content -->
-        <div class="flex-grow-1 p-4">
-            <h2>Basic Information Form</h2>
-            <form>
+        <div class="flex-grow-1 p-4 row justify-content-center">
+            <h2>
+                <center>Basic Information Form</center>
+            </h2>
+            <form class="col-md-8 ">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" required>
